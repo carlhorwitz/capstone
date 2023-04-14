@@ -1,4 +1,4 @@
-# Airbnb listing analysis
+# Airbnb Price Recommender and Listing Analysis
 
 ### Carl Horwitz
 ---
@@ -7,7 +7,7 @@
 1. [Problem Statement](#Problem-Statement)
 2. [Dataset Introduction](#Dataset-Introduction)
 3. [My Notebooks](#My-Notebooks)
-4. [Executive Summary](#Conclusions)
+4. [Executive Summary](#Executive_Summary)
 5. [Data Dictionary](#Data_Dictionary)
 6. [Data](#Data)
 7. [References](#References)
@@ -26,43 +26,46 @@ The significance of this problem to help each owner optimize their listing so th
 
 ## Dataset Introduction
 
-In this project, I have ensembled multiple datasets to enhance my analysis. My primary datasets were downloaded from InsideAirbnb, a website that does quarterly scrapes of the Airbnb site.  Their data includes pretty much any/all listening information provided in an Airbnb post. Data is separated into major metropolitian areas.  The dataset from Denver contained over 5250 listings, with 75 features to a home.  Another dataset from Airbnb contained all the reviews for the Denver listings. This contained over a quarter million individual reviews, with around4000 of the listings having at least one review. The listings information did not include any addresses, but did include the neighborhood. I wanted to get more specific information about the home's location so I used the given latitude and longitude and the Walk Score API to gather information about how walkable, bikeable and accessible to public transit each location is. 
+In this project, I have ensembled multiple datasets to enhance my analysis. My primary datasets were downloaded from InsideAirbnb, a website that does quarterly scrapes of the Airbnb site.  Their data includes pretty much any/all listening information provided in an Airbnb post. Data is separated into major metropolitian areas.  The dataset from Denver contained over 5250 listings, with 75 features to a home.  Another dataset from Airbnb contained all the reviews for the Denver listings. This contained over a quarter million individual reviews, with around 4000 of the listings having at least one review. The listings information did not include any addresses, but did include the neighborhood. I wanted to get more specific information about the home's location so I used the given latitude and longitude and the Walk Score API to gather information about how walkable, bikeable and accessible to public transit each location is. 
 
 ---
 ## Deliverables
 
-README.md: provides instruction and overview of the project
+1. README.md: provides instruction and overview of the project
 
-1. Prepoccessing Folder 
+2. Prepoccessing folder 
 * `01. cleaning.ipynb`: First round of cleaning
 * `02. api.ipynb`: Walk Score API pull
 * `03. NLP_on_listing.ipynb`: Sentiment Analysis on description columns
-* `04. Working_with_the_price.ipynb`: Cleaning up the price column
+* `04. Working_with_the_price.ipynb`: Cleaning up the price column. Created two datasets to work with all listings and a more affordable subset. 
 * `05.review_sentiment_analysis.ipynb`: Analyzing the sentiment of reviews for each listing. 
 * `06. EDA.ipynb`: EDA exploration
-2. Price Predictor Folder 
-* `00. baseline_exploration`: Finding baseline and intitial model testing.  
+
+3. Price Predictor folder 
+* `00. baseline_exploration_1500`: Finding baseline and intitial model testing.  
 * `01. bagging_pipelind.ipynb`: Grid searching a bagged trees model
 * `02. ET pipeline.ipynb`: Grid searching a extra trees model
 * `03. gradient_boost_pipeline.ipynb`: Grid searching a gradient boost trees model
 * `04. RF pipeline.ipynb`: Grid searching a random forest model
 * `05. RF_log_pipeline.ipynb`: Grid searching a random forest with a log transfomation 
 * `06. neural_network.ipynb`: Neural Network model
+* `xx. baseline_exploration_450`: Finding baseline and intitial model testing if I wanted to utilize a more affordable subset of listings.
 
-3. images- Folder containing various imagines made throughout EDA and modeling. 
+4. images- folder containing various imagines made throughout EDA and modeling. 
 
-4. streamlit- folder housing the streamlit_app.py and its associated pages
+5. streamlit- folder housing the streamlit_app.py and its associated pages
 
-5. presentation - pdf of the presentation, also found at 
+6. presentation- pdf of the presentation, also found at 
+
+7. data- folder containing original and cleaned datasets
 
 
 --- 
 
 ## Executive Summary
 
-Using the data that was provided by Airbnb and bringing in other ouside resources (WalkScore API and Natural language processing (NLP)) I was able to create a model that reduced an baseline Root Mean Square Error (RMSE) score of 133 down to 85. 
+After collecting and cleaning data that was provided by Airbnb and other ouside resources (WalkScore API and Natural language processing (NLP)) I ran a wide range of prelimiary ML models (Extra Trees, Nueral network, Random Forest, Gradient Boost...) to try to predict the price of a listing. I took the best peforming models and did further parameter adjustment to try to find the best model. I ended up settling on a Bagging Regressor that fairly accurately predicted the price of a rental property while taking into consideration the market. I was able to create a model that reduced an baseline Root Mean Square Error (RMSE) score of 133 down to 84. 
 
-After running a wide range of ML models (Extra Trees, Nueral network, Random Forest, Gradient Boost, Bagged Trees...) I was able to settle an Extra Trees model that fairly accurately predicted the price of a rental property while taking into consideration the market. 
 
 
 
