@@ -64,23 +64,19 @@ In this project, I have ensembled multiple datasets to enhance my analysis. My p
 
 ## Executive Summary
 
-After collecting and cleaning data that was provided by Airbnb and other ouside resources (WalkScore API and Natural language processing (NLP)) I ran a wide range of prelimiary ML models (Extra Trees, Nueral network, Random Forest, Gradient Boost...) to try to predict the price of a listing. I took the best peforming models and did further parameter adjustment to try to find the best model. I ended up settling on a Bagging Regressor that fairly accurately predicted the price of a rental property while taking into consideration the market. I was able to create a model that reduced an baseline Root Mean Square Error (RMSE) score of 133 down to 84. 
+After collecting and cleaning data that was provided by Airbnb and other ouside resources (WalkScore API and Natural language processing (NLP)) I ran a wide range of prelimiary ML models (Extra Trees, Nueral network, Random Forest, Gradient Boost...) to try to predict the price of a listing. I took the best peforming models and did further parameter adjustment to try to find the best model. I ended up settling on a Bagging Decision Tree Regressor that reduced the baseline Root Mean Square Error (RMSE) score of 133 down to 84.
+
 
 
 
 
  ![Feature importances](images/feature_importance.png) 
 
-I was able to include this information in a streamlit app where a user (new or exisiting) can input information about their rental and receive a price recommendation. Within the app existing users can also compared the number, and sentiment, of their reviews against the mean. Lastly users can enter their descriptive sections (About Me, Neighborhood, Property) for a sentiment analyses compared to other posts).  
+I was able to include this information in a streamlit app where a user (new or exisiting) can input information about their rental and receive a price recommendation. Within the app existing users can also compared the number, and sentiment, of their reviews against the mean. Lastly users can enter their descriptive sections (About Me, Neighborhood, Property) for a sentiment analyses compared to other posts.  
 
 ---
 
 ### Recommendations
-1. Educate the community about the most common causes of wildfires in the area, such as lightning strikes, human activity, and equipment failure.
-2. Encourage citizens to report any suspicious activity or behavior that may lead to a fire.
-3. Train local firefighters and first responders to identify the cause of a fire and collect evidence for investigation.
-4. Use technology such as drones and cameras to monitor high-risk areas for potential fires and gather data on environmental factors that could contribute to their occurrence.
-5. Conduct regular evaluations of equipment and infrastructure that may pose a fire risk, such as power lines and transformers.
 
 --- 
 
@@ -125,3 +121,4 @@ A similar sentimnt analysis was conduction on
 3. WalkScore API: https://www.walkscore.com/professional/api.php
 4. Kate Skibo: code to loop through different model
 5. Katie Sylvia: help with lots of problem solving throughout
+6. ChatGPT for trying to help me, but often failing.  

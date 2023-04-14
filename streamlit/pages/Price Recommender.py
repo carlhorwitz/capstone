@@ -6,7 +6,7 @@ import time
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 from PIL import Image
 
-df = pd.read_csv('/Users/carl/GA/projects/airbnb/data/1500_sentiment_api.csv')
+df = pd.read_csv('../data/1500_review_sentiment.csv')
 
 # !pip install streamlit-extras
 from streamlit_extras.switch_page_button import switch_page
@@ -194,6 +194,7 @@ columns=[
      'number_of_reviews',
      'bike_scores',
     'walk_scores',
+    'transit_scores',
     'host_sent_compound', 
     'description_sent_compound', 
     'neighborhood_sent_compound']
@@ -220,6 +221,7 @@ user_input = np.array([ shared_status,
     number_of_reviews,
     bike_scores,
     walk_scores,
+    transit_scores,
     host_sent_compound, 
     description_sent_compound, 
     neighborhood_sent_compound])
