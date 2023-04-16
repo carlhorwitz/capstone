@@ -13,9 +13,6 @@ from streamlit_extras.switch_page_button import switch_page
 
 df = pd.read_csv('../data/1500_review_sentiment.csv')
 
-st.write(df.head(2))
-
-
 st.title("Review Analysis")
 st.subheader("Let's explore the reviews you have received on your property and how they compare to the average review.")
 st.write("Enter your listing ID below. If you don't know it, go to your listing page and copy the number at the end of the url")
@@ -34,6 +31,11 @@ else:
         with st.spinner('Predicting...'):
             time.sleep(20)
 
+            bedroom = int(df.loc[df['id'] == user_input, 'bedrooms'].iloc[0])
+            hood= df.loc[df['id'] == user_input, 'neighborhood'].iloc[0]
+            space= df.loc[df['id'] == user_input, 'shared_status'].iloc[0]
+
+
             rating = df.loc[df['id'] == user_input, 'review_scores_rating'].iloc[0]
             cleanliness = df.loc[df['id'] == user_input, 'review_scores_cleanliness'].iloc[0]
             communication = df.loc[df['id'] == user_input, 'review_scores_communication'].iloc[0]
@@ -45,8 +47,7 @@ else:
             ave_communication = round(df['review_scores_communication'].mean(),2)
             ave_location = round(df['review_scores_location'].mean(),2)
             
-
-            st.write(f"You have received {num_reviews} reviews so far") 
+            st.write(f"Your {bedroom} bedroom {space} in {hood} has received {num_reviews} reviews so far") 
             st.write(f"On average guests have rated their stay a {rating}, compared to an Airbnb average of {ave_rating}") 
             st.write(f"On average guests have rated the cleanliness of your place a {cleanliness}, compared to an Airbnb average of {ave_cleanliness}") 
             st.write(f"On average guests have rated your communication a {communication}, compared to an Airbnb average of {ave_communication}")
@@ -112,6 +113,5 @@ else:
             ax.set_xticks(x)
             ax.set_xticklabels(labels)
             ax.legend(loc='lower right')
-
-            # Display the chart using Streamlit
+            
             st.pyplot(fig)

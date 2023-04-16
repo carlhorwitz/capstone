@@ -1,5 +1,7 @@
 # Ignore Jupyter Notebook Saves
 .ipynb_checkpoints
 
+pickle/bagged_GB.pkl
+
 # Ignore MacOS directory metadata file
 .DS_Store

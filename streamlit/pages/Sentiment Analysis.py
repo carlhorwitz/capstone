@@ -17,11 +17,11 @@ df = pd.read_csv('../data/1500_sentiment_api.csv')
 
 st.title("Sentiment Analysis")
 st.subheader('The tone of a listing has an impact on whether people elect to stay in a location and how much they will pay')
-st.write("Sentiment analysis is one way to interpret the tone of the written word.\n" \
-       "An analysis calculates a positive, negative, neutral and compound sentiment scores\n" \
-       "Positive and negative scores are on a 0-1 scale. Where 1 is strongly correlated to that sentiment and 0 is not correlated at all.\n" \
-       "The compound score is a combination of the three other scores and reflects a wholistic score:\n" \
-       "-1 being collectively negative and +1 being collectively positive")
+
+st.write("Sentiment analysis is a computational process for determining whether a piece of writing has a positive, negative, or neutral tone. \n" \
+       "The analysis returns numeric values on a 0-1 scale, with the number indicating the probability that a given input fits into that category.\n" \
+       "Additionally, sentiment analysis combines individual scores to create a compound score, which provides a more 'holistic' assessment of sentiment.\n" \
+       "A compound score of -1 suggests a strong probability of negativity, while a score of +1 suggests a strong probability of positivity.")
 
 st.write("Input a block of text from your listing and we'll compare the tone of your post existing posts.")
 
@@ -68,7 +68,6 @@ if st.button('Make prediction'):
         ax.set_xticklabels(labels)
         ax.legend()
 
-        # Display the chart using Streamlit
         st.pyplot(fig)
 
 
@@ -92,7 +91,6 @@ if st.button('Make prediction'):
         ax.set_xticklabels(labels)
         ax.legend()
 
-        # Display the chart using Streamlit
         st.pyplot(fig)
 
 
@@ -115,5 +113,4 @@ if st.button('Make prediction'):
         ax.set_xticklabels(labels)
         ax.legend()
 
-        # Display the chart using Streamlit
         st.pyplot(fig)

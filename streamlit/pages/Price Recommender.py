@@ -12,12 +12,13 @@ df = pd.read_csv('../data/1500_review_sentiment.csv')
 from streamlit_extras.switch_page_button import switch_page
 
 
-st.title('How much do I charge for my Airbnb listing?')
+st.title('How much should I charge for my Airbnb listing?')
 st.subheader("Answer the following questions and given current market trends, we'll recommend a price")
 
 
 owner = st.text_input("What is your name?","")
 
+#take in all the necessary information
 st.write(f"Hi {owner}.") 
 st.subheader("Information about the space:")
 st.write("The first two questions are pull-down menus, or you can start typing to narrow down the options")
@@ -57,15 +58,15 @@ st.write("")
 
 col1, col2 = st.columns(2)
 with col1:
-    accommodates = st.slider("How many people can your listing accomodate?", min_value=1, max_value=20)
+    accommodates = st.slider("How many people can your listing accomodate?", min_value=1, max_value=16)
 with col2:
-    beds_adjusted = st.slider("How many beds are available?", min_value=1, max_value=20)
+    beds_adjusted = st.slider("How many beds are available?", min_value=1, max_value=10)
 
 col1, col2 = st.columns(2)
 with col1:
-    bedrooms = st.slider("In how many bedrooms?", min_value=1, max_value=10)
+    bedrooms = st.slider("In how many bedrooms?", min_value=1, max_value=6)
 with col2:
-    bathrooms = st.slider("How many bathrooms are available?", min_value=1, max_value=8)
+    bathrooms = st.slider("How many bathrooms are available?", min_value=1, max_value=6)
 
 
 stay_range = st.slider("What is the minimum and maximum length of a stay?", value=[1,90])
@@ -74,6 +75,8 @@ minimum_nights=stay_range[0]
 maximum_nights=stay_range[1]
 
 st.subheader("Information about the listing:")
+
+#create a map so that the inputs here match the format of the df
 
 yes_no_dict = {'Yes': 1, 'No': 0}
 
@@ -89,7 +92,7 @@ host_has_profile_pic = yes_no_dict[host_has_profile_pic]
 
 host_lives_in_neighborhood = st.radio(
     "Do you live in the same neighborhood as your listing?",
-    ('No', 'yes'))
+    ('No', 'Yes'))
 host_lives_in_neighborhood = yes_no_dict[host_lives_in_neighborhood]
 
 license_listed = st.radio(
@@ -172,6 +175,7 @@ with col1:
 with col2:
     number_of_reviews = st.slider("How many reviews do you have?", min_value=0, max_value=50)
 
+#set up the information to be entered into the model
 columns=[
     'shared_status', 
     'accommodates',
@@ -199,7 +203,6 @@ columns=[
     'description_sent_compound', 
     'neighborhood_sent_compound']
 
-# Create DataFrame with column names
 user_input = np.array([ shared_status, 
     accommodates,
     bathrooms, 
@@ -230,7 +233,7 @@ X = pd.DataFrame(data=user_input.reshape(1, -1), columns=columns)
 
 
 # Read in model:
-with open('../pickle/bagged.pkl', 'rb') as f:
+with open('../pickle/bagged_GB.pkl', 'rb') as f:
     df_model = pickle.load(f)
 
 st.write("")
@@ -261,13 +264,13 @@ if st.button('Make prediction'):
 
     st.write("")
     st.write("We have found the feature importance of price can be determined by the following categories ")
-    image = Image.open('/Users/carl/GA/projects/airbnb/images/feature_importance.png')
+    image = Image.open('../images/bagged_GD_final.png')
     st.image(image, caption='Top factors in Airbnb price')
 
     st.write("A lot of features of your rental/listing are beyond your control (size, location...) one thing you CAN influence\n" \
              "is the tone of your descriptions, be sure to visit the Sentiment Analysis page to assess how you compare with other listings.")
 
     if license_listed==0:
-        st.write("All things equal, having your license listed is the next largest factor of price, following accomodation size\n" \
-                 "It appears you didn't check that box, so make sure you get that taken care of.")
+        st.write("In this particular model, it's of lesser importance, however in other models having your license listed\n" \
+                 "a larger factor in price. It appears you didn't check that box, if you have a license, be sure to include that in your listing.")
 
