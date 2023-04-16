@@ -14,9 +14,9 @@
 2. [Problem Statement](#Problem-Statement)
 3. [Dataset Introduction](#Dataset-Introduction)
 4. [Deliverables](#Deliverables)
-5. [Executive Summary](#Executive_Summary)
+5. [Executive Summary](#Executive-Summary)
 6. [Recommended Next Steps](#Recommendations-and-Next-Steps)
-7. [Data Dictionary](#Data_Dictionary)
+7. [Data Dictionary](#Data-Dictionary)
 8. [References](#References)
 
 --- 
