@@ -51,27 +51,30 @@ In this project, I have ensembled multiple datasets to enhance my analysis. My p
 
 2. Prepoccessing folder 
 * `01. cleaning.ipynb`: First round of cleaning
-* `02. api.ipynb`: Walk Score API pull
+* `02. API.ipynb`: Walk Score API pull
 * `03. NLP_on_listing.ipynb`: Sentiment Analysis on description columns
 * `04. Working_with_the_price.ipynb`: Cleaning up the price column. Created two datasets to work with all listings and a more affordable subset. 
-* `05.review_sentiment_analysis.ipynb`: Analyzing the sentiment of reviews for each listing. 
+* `05. review_sentiment_analysis.ipynb`: Analyzing the sentiment of reviews for each listing. 
 * `06. EDA.ipynb`: EDA exploration
+* `07. Review NLP EDA.ipynb`: EDA exploration of reviews
+
 
 3. Price Predictor folder 
 * `00. baseline_exploration_1500`: Finding baseline and intitial model testing.  
-* `01. bagging_pipelind.ipynb`: Grid searching a bagged trees model
-* `02. ET pipeline.ipynb`: Grid searching a extra trees model
+* `01. bagging_DT.ipynb`: Grid searching a bagged trees model
+* `02. ET pipeline_with_features.ipynb`: Grid searching a extra trees model
 * `03. gradient_boost_pipeline.ipynb`: Grid searching a gradient boost trees model
 * `04. RF pipeline.ipynb`: Grid searching a random forest model
 * `05. RF_log_pipeline.ipynb`: Grid searching a random forest with a log transfomation 
 * `06. neural_network.ipynb`: Neural Network model
+* `07. Bagged_GB_and_XG.ipynb`: Grid searching over other tree models
 * `xx. baseline_exploration_450`: Finding baseline and intitial model testing if I wanted to utilize a more affordable subset of listings.
 
 4. images- folder containing various imagines made throughout EDA and modeling. 
 
 5. streamlit- folder housing the streamlit_app.py and its associated pages
 
-6. presentation- pdf of the presentation, also found at https://docs.google.com/presentation/d/1V3CbshkcWHjXC8CQjYQ4bek8tl3sx8WBYoXbKefhphY/edit?usp=sharing
+6. Capstone Airbnb.pdf- Presentation, also found at https://docs.google.com/presentation/d/1V3CbshkcWHjXC8CQjYQ4bek8tl3sx8WBYoXbKefhphY/edit?usp=sharing
 
 7. data- folder containing original and cleaned datasets
 
