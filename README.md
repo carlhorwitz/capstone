@@ -71,7 +71,7 @@ In this project, I have ensembled multiple datasets to enhance my analysis. My p
 
 5. streamlit- folder housing the streamlit_app.py and its associated pages
 
-6. presentation- pdf of the presentation, also found at 
+6. presentation- pdf of the presentation, also found at https://docs.google.com/presentation/d/1V3CbshkcWHjXC8CQjYQ4bek8tl3sx8WBYoXbKefhphY/edit?usp=sharing
 
 7. data- folder containing original and cleaned datasets
 
