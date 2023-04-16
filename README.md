@@ -146,6 +146,6 @@ https://www.freepik.com/
 http://insideairbnb.com/get-the-data/
 5. WalkScore API: <br />
 https://www.walkscore.com/professional/api.php
-6. Kate Skibo: starter code to loop through different models
-7. Katie Sylvia: for helping me navigate all sorts of struggles. 
-8. ChatGPT for trying to help me, but usually failing.  
+6. Katie Sylvia: for helping me navigate all sorts of struggles. 
+7. Kate Skibo: starter code to loop through different models 
+8. ChatGPT for trying to help me, but usually failing.
