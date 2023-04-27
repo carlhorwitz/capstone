@@ -8,7 +8,7 @@ from streamlit_extras.switch_page_button import switch_page
 def main():
     st.title("Home Page")
 
-st.title('Welcome to my Airbnb assistance page')
+st.title('Welcome to the Airbnb assistance page')
 st.text("")
 st.subheader("Your one stop shop for Airbnb listing analysis\n" \
              "What can I help you with?")
