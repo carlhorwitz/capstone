@@ -21,5 +21,5 @@ st.write("From here I was able to download 2 main datasets.  One considing of ov
 
 st.write("We have found the feature importance of price can be determined by the following categories ")
 image = Image.open('../images/bagged_GD_final.png')
-st.image(image, caption='Top 10 features that determine price')
+st.image(image, caption='Top 10 features that determine price') 
 

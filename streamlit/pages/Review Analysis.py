@@ -17,7 +17,7 @@ st.title("Review Analysis")
 st.subheader("Let's explore the reviews you have received on your property and how they compare to the average review.")
 st.write("Enter your listing ID below. If you don't know it, go to your listing page and copy the number at the end of the url")
             
-user_input = st.number_input("Enter a number", value=1)
+user_input = st.number_input("Enter a number", value=1) 
 
 user_input = int(user_input)
 

@@ -12,7 +12,7 @@ from PIL import Image
 from streamlit_extras.switch_page_button import switch_page
 
 # df = pd.read_csv('/Users/carl/GA/projects/airbnb/data/1500_sentiment_api.csv')
-df = pd.read_csv('../data/1500_sentiment_api.csv')
+df = pd.read_csv('../data/1500_sentiment_api.csv') 
 
 
 st.title("Sentiment Analysis")

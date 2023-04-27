@@ -263,7 +263,7 @@ if st.button('Make prediction'):
     st.write(f"The 'average' rental in {neighborhood} is a {common_status} that accomodates {ave_guests} for ${ave_price}")
 
     st.write("")
-    st.write("We have found the feature importance of price can be determined by the following categories")
+    st.write("We have found the feature importance of price can be determined by the following categories") 
     image = Image.open('../images/bagged_GD_final.png')
     st.image(image, caption='Top factors in Airbnb price')
 
