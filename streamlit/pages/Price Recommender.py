@@ -3,6 +3,8 @@ import pickle
 import numpy as np
 import pandas as pd
 import time
+import nltk
+nltk.download('vader_lexicon')
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 from PIL import Image
 
